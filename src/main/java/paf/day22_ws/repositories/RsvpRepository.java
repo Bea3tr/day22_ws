@@ -31,7 +31,7 @@ public class RsvpRepository {
         List<Rsvp> rsvps = new LinkedList<>();
         rsvps = template.query(Sql.getRsvpByName, BeanPropertyRowMapper.newInstance(Rsvp.class), name);
         if(rsvps.isEmpty())
-            throw new ResourceNotFoundException("No record in Rsvp table");
+            throw new ResourceNotFoundException("No record in Rsvp table registered under " + name);
         return rsvps;
     }
 
