@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert RSVP</title>
+</head>
+<body>
+
+    <form method="POST" action="/api/rsvp" data-th-object="${rsvp}">
+        <table>
+            <tr>
+                <td>Full Name: </td>
+                <td>
+                    <input type="text" data-th-field="*{fullname}" required>
+                </td>
+            </tr>
+            <tr>
+                <td>Email: </td>
+                <td>
+                    <input type="email" data-th-field="*{email}" required>
+                </td>
+            </tr>
+            <tr>
+                <td>Phone: </td>
+                <td>
+                    <input type="text" data-th-field="*{phone}" required>
+                </td>
+            </tr>
+            <tr>
+                <td>Confirmation Date: </td>
+                <td>
+                    <input type="date" data-th-field="*{confirmation_date}" required>
+                </td>
+            </tr>
+            <tr>
+                <td>Comments: </td>
+                <td>
+                    <input type="text" data-th-field="*{comments}" required>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button type="submit">Submit</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    
+</body>
+</html>

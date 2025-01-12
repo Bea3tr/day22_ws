@@ -2,17 +2,17 @@ package paf.day22_ws.models;
 
 import java.sql.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Rsvp {
 
-    private int id;
     private String fullname;
     private String email;
     private String phone;
+
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date confirmation_date;
     private String comments;
-
-    public int getId() {return id;}
-    public void setId(int id) {this.id = id;}
     
     public String getFullname() {return fullname;}
     public void setFullname(String fullname) {this.fullname = fullname;}
@@ -30,8 +30,7 @@ public class Rsvp {
     public void setComments(String comments) {this.comments = comments;}
     
     public Rsvp() {}
-    public Rsvp(int id, String fullname, String email, String phone, Date confirmation_date, String comments) {
-        this.id = id;
+    public Rsvp(String fullname, String email, String phone, Date confirmation_date, String comments) {
         this.fullname = fullname;
         this.email = email;
         this.phone = phone;

@@ -25,6 +25,6 @@ public class Sql {
                 comments = ?
                 WHERE email = ?
             """;
-    public static final String getPeopleWRsvp = "SELECT COUNT(DISTINCT fullname) AS count from rsvp";
+    public static final String getPeopleWRsvp = "SELECT count(distinct fullname) AS count FROM rsvp";
     
 }

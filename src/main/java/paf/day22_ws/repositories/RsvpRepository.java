@@ -61,8 +61,9 @@ public class RsvpRepository {
         return true;
     }
 
+    @SuppressWarnings("null")
     public int getCountPeopleWRsvp() {
-        int count = template.queryForRowSet(Sql.getPeopleWRsvp).getInt("count");
+        int count = template.queryForObject(Sql.getPeopleWRsvp, Integer.class);
         return count;
     }
 }
